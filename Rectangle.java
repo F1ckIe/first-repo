@@ -14,5 +14,6 @@ public class Rectangle {
         System.out.printf("%10s%-10.2f", "wide:", width);
         System.out.printf("%4s%-4.2f", "height:", height);
         System.out.printf("%4s%-4.2f", "\narea:", area);
+        reader.close();
     }
 }
