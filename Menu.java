@@ -1,0 +1,94 @@
+//2024.6.24
+//by cjm
+
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
+
+public class Menu {
+    JMenuBar menubar; // 创建菜单栏
+    JMenu menu1, menu2, menu3, menu4, menu5, menu6, menu7; // 创建菜单，子菜单
+    JMenuItem item1, item2, item3, item4, item5, item6; // 创建菜单子项
+
+    public Menu() {
+        menubar = new JMenuBar();
+        menu1 = new JMenu("添加物品"); // 设置菜单名
+        menu2 = new JMenu("查询物品");
+        menu3 = new JMenu("显示物品库");
+        menu4 = new JMenu("删除物品");
+        menu5 = new JMenu("物品存盘");
+        menu6 = new JMenu("读出物品");
+        menu7 = new JMenu("统计信息");
+
+        item1 = new JMenuItem("新建图书", new ImageIcon("a.gif"));
+        item2 = new JMenuItem("新建视频光盘", new ImageIcon("b.gif"));
+        item3 = new JMenuItem("新建图画", new ImageIcon("c.gif"));
+        item4 = new JMenuItem("按标题查询", new ImageIcon("d.gif"));
+        item5 = new JMenuItem("按编号查询", new ImageIcon("e.gif"));
+        item6 = new JMenuItem("按类别查询", new ImageIcon("f.gif"));
+        item4.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_DOWN_MASK)); // 设置快捷键
+        item5.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK)); // 设置快捷键
+        item6.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, InputEvent.CTRL_DOWN_MASK)); // 设置快捷键
+
+        menu1.add(item1); // 添加到菜单
+        menu1.addSeparator(); // 分隔符
+        menu1.add(item2);
+        menu1.addSeparator();
+        menu1.add(item3);
+
+        menu2.add(item4); // 添加到菜单
+        menu2.addSeparator(); // 分隔符
+        menu2.add(item5);
+        menu2.addSeparator();
+        menu2.add(item6);
+
+        menubar.add(menu1);
+        menubar.add(menu2);
+        menubar.add(menu3);
+        menubar.add(menu4);
+        menubar.add(menu5);
+        menubar.add(menu6);
+        menubar.add(menu7);
+
+        item1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                // System.out.println("aaa");
+                AddWindow addWindow = new AddWindow();
+                Container con = addWindow.getContentPane(); // 容器
+                con.setBackground(Color.white);
+            }
+        });
+
+        item4.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                TitleSearch titleSearch = new TitleSearch();
+                Container con = titleSearch.getContentPane();
+                con.setBackground(Color.yellow);
+            } // 标题查询
+        });
+
+        item5.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                NumberSearch numberSearch = new NumberSearch();
+                Container con = numberSearch.getContentPane();
+                con.setBackground(Color.pink);
+            } // 编号查询
+        });
+
+        item6.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                CategorySearch categorySearch = new CategorySearch();
+                Container con = categorySearch.getContentPane();
+                con.setBackground(Color.green);
+            } // 类别查询
+        });
+    }
+
+    public JMenuBar getMenu() {
+        return menubar;
+    }
+}
