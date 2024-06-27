@@ -8,9 +8,10 @@ public class CategorySearch extends JFrame {
         setTitle("类别查询");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(400, 140);
-        setVisible(true);
         setLocationRelativeTo(null);
         CSComponents components = new CSComponents();
         setContentPane(components);
+
+        setVisible(true);
     }
 }

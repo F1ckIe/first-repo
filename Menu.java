@@ -54,8 +54,26 @@ public class Menu {
             @Override
             public void mouseReleased(MouseEvent e) {
                 // System.out.println("aaa");
-                AddWindow addWindow = new AddWindow();
-                Container con = addWindow.getContentPane(); // 容器
+                AddWindowBook addWindowBook = new AddWindowBook();
+                Container con = addWindowBook.getContentPane(); // 容器
+                con.setBackground(Color.white);
+            }
+        });
+
+        item2.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                AddWindowCD addWindowCD = new AddWindowCD();
+                Container con = addWindowCD.getContentPane(); // 容器
+                con.setBackground(Color.white);
+            }
+        });
+
+        item3.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                AddWindowPicture addWindowPicture = new AddWindowPicture();
+                Container con = addWindowPicture.getContentPane(); // 容器
                 con.setBackground(Color.white);
             }
         });

@@ -8,9 +8,10 @@ public class NumberSearch extends JFrame {
         setTitle("编号查询");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(400, 140);
-        setVisible(true);
         setLocationRelativeTo(null);
         NSComponents components = new NSComponents();
         setContentPane(components);
+
+        setVisible(true);
     }
 }
