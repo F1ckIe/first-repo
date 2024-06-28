@@ -1,11 +1,11 @@
-//2024.6.25
+//2024.6.27
 //by cjm
 
 import javax.swing.*;
 import java.awt.*;
 
-public class NSComponents extends JPanel {
-    public NSComponents() {
+public class DWComponents extends JPanel {
+    public DWComponents() {
         setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
 
@@ -29,7 +29,7 @@ public class NSComponents extends JPanel {
         c.insets = new Insets(20, 0, 0, 20);
         add(TStext);
 
-        JButton button = new JButton("查询");
+        JButton button = new JButton("删除");
         c.gridx = 2;
         c.gridy = 0;
         c.insets = new Insets(20, 0, 0, 20);

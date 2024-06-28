@@ -16,12 +16,18 @@ public class loginWindow extends JFrame {
         window1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 窗口相关内容
 
         JPanel loginContentPane = new JPanel();
-        loginContentPane.add(new JLabel("用户名："));
-        loginContentPane.add(new JTextField(10));
+        loginContentPane.add(Box.createRigidArea(new Dimension(100, 0)));
+        loginContentPane.add(new JLabel("账号："));
+        loginContentPane.add(new JTextField(13));
+        loginContentPane.add(Box.createRigidArea(new Dimension(100, 0)));
+        loginContentPane.add(Box.createRigidArea(new Dimension(100, 0)));
         loginContentPane.add(new JLabel("密码："));
-        loginContentPane.add(new JPasswordField(10));
+        loginContentPane.add(new JPasswordField(13));
+        loginContentPane.add(Box.createRigidArea(new Dimension(100, 0)));
+        loginContentPane.add(Box.createRigidArea(new Dimension(150, 0)));
         JButton button = new JButton("登录");
         loginContentPane.add(button);
+        loginContentPane.add(Box.createRigidArea(new Dimension(150, 0)));
         window1.add(loginContentPane);
 
         button.addMouseListener(new MouseAdapter() {

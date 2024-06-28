@@ -15,7 +15,7 @@ public class CSComponents extends JPanel {
 
         // 创建和添加组件
         JLabel TSbiaoqian = new JLabel("输入类别");
-        Font font = new Font("宋体", Font.PLAIN, 14);
+        Font font = new Font("楷体", Font.PLAIN, 14);
         TSbiaoqian.setFont(font);
         TSbiaoqian.setPreferredSize(new Dimension(60, 20));
         c.gridx = 0;

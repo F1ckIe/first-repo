@@ -8,7 +8,7 @@ import java.awt.*;
 public class Menu {
     JMenuBar menubar; // 创建菜单栏
     JMenu menu1, menu2, menu3, menu4, menu5, menu6, menu7; // 创建菜单，子菜单
-    JMenuItem item1, item2, item3, item4, item5, item6; // 创建菜单子项
+    JMenuItem item1, item2, item3, item4, item5, item6, item7, item8, item9; // 创建菜单子项
 
     public Menu() {
         menubar = new JMenuBar();
@@ -26,6 +26,9 @@ public class Menu {
         item4 = new JMenuItem("按标题查询", new ImageIcon("d.gif"));
         item5 = new JMenuItem("按编号查询", new ImageIcon("e.gif"));
         item6 = new JMenuItem("按类别查询", new ImageIcon("f.gif"));
+        item7 = new JMenuItem("显示图书", new ImageIcon("f.gif"));
+        item8 = new JMenuItem("显示CD", new ImageIcon("f.gif"));
+        item9 = new JMenuItem("显示图画", new ImageIcon("f.gif"));
         item4.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_DOWN_MASK)); // 设置快捷键
         item5.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK)); // 设置快捷键
         item6.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, InputEvent.CTRL_DOWN_MASK)); // 设置快捷键
@@ -41,6 +44,12 @@ public class Menu {
         menu2.add(item5);
         menu2.addSeparator();
         menu2.add(item6);
+
+        menu3.add(item7); // 添加到菜单
+        menu3.addSeparator(); // 分隔符
+        menu3.add(item8);
+        menu3.addSeparator();
+        menu3.add(item9);
 
         menubar.add(menu1);
         menubar.add(menu2);
@@ -103,6 +112,33 @@ public class Menu {
                 Container con = categorySearch.getContentPane();
                 con.setBackground(Color.green);
             } // 类别查询
+        });
+
+        menu4.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                DeleteWindow deleteWindow = new DeleteWindow();
+                Container con = deleteWindow.getContentPane();
+                con.setBackground(Color.white);
+            } // 删除功能
+        });
+
+        menu5.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                SaveWindow saveWindow = new SaveWindow();
+                Container con = saveWindow.getContentPane();
+                con.setBackground(Color.white);
+            } // 保存功能
+        });
+
+        menu6.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                LoadWindow loadWindow = new LoadWindow();
+                Container con = loadWindow.getContentPane();
+                con.setBackground(Color.white);
+            } // 加载功能
         });
     }
 
