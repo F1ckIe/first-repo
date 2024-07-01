@@ -33,7 +33,7 @@ public class loginWindow extends JFrame {
         button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
-                MainWindow mainWindow = new MainWindow();
+                MainWindow mainWindow = MainWindow.getInstance();
                 Container con = mainWindow.getContentPane();
                 con.setBackground(Color.white);
                 window1.dispose();

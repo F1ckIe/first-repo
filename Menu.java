@@ -17,7 +17,7 @@ public class Menu {
         menu3 = new JMenu("显示物品库");
         menu4 = new JMenu("删除物品");
         menu5 = new JMenu("物品存盘");
-        menu6 = new JMenu("读出物品");
+        menu6 = new JMenu("读入物品");
         menu7 = new JMenu("统计信息");
 
         item1 = new JMenuItem("新建图书", new ImageIcon("a.gif"));

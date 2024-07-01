@@ -5,24 +5,26 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class MainWindow extends JFrame {
-    public MainWindow() {
+
+    private static MainWindow instance;
+
+    private MainWindow() {
         setTitle("图书管理系统");
-        setSize(650, 480);
+        setSize(770, 565);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 窗口相关内容
 
         Menu menu = new Menu(); // 创建菜单
         setJMenuBar(menu.getMenu()); // 设置菜单
 
-        MCStatistic statistic = new MCStatistic(); // 创建面板
+        MCStatistic statistic = MCStatistic.getInstance(); // 创建面板
         setContentPane(statistic); // 设置面板
 
         menu.item7.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
                 // System.out.println("666");
-                getContentPane().removeAll();
-                MWBookDisplay bookDisplay = new MWBookDisplay();
+                MWBookDisplay bookDisplay = MWBookDisplay.getInstance();
                 setContentPane(bookDisplay);
                 revalidate();
                 repaint();
@@ -33,8 +35,7 @@ public class MainWindow extends JFrame {
             @Override
             public void mouseReleased(MouseEvent e) {
                 // System.out.println("666");
-                getContentPane().removeAll();
-                MWCDDisplay CDDisplay = new MWCDDisplay();
+                MWCDDisplay CDDisplay = MWCDDisplay.getInstance();
                 setContentPane(CDDisplay);
                 revalidate();
                 repaint();
@@ -45,8 +46,7 @@ public class MainWindow extends JFrame {
             @Override
             public void mouseReleased(MouseEvent e) {
                 // System.out.println("666");
-                getContentPane().removeAll();
-                MWPictureDisplay pictureDisplay = new MWPictureDisplay();
+                MWPictureDisplay pictureDisplay = MWPictureDisplay.getInstance();
                 setContentPane(pictureDisplay);
                 revalidate();
                 repaint();
@@ -57,8 +57,7 @@ public class MainWindow extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 // System.out.println("555");
-                getContentPane().removeAll();
-                MCStatistic statistic = new MCStatistic();
+                MCStatistic statistic = MCStatistic.getInstance();
                 setContentPane(statistic);
                 revalidate();
                 repaint();
@@ -66,5 +65,12 @@ public class MainWindow extends JFrame {
         });
 
         setVisible(true);
+    }
+
+    public static MainWindow getInstance() {
+        if (instance == null) {
+            instance = new MainWindow();
+        }
+        return instance;
     }
 }
