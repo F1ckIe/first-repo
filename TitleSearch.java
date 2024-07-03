@@ -9,7 +9,7 @@ public class TitleSearch extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(400, 140);
         setLocationRelativeTo(null);
-        TSComponents components = new TSComponents();
+        TSComponents components = TSComponents.getInstance();
         setContentPane(components);
 
         setVisible(true);

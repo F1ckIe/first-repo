@@ -125,12 +125,17 @@ public class AddWindowPicture extends JFrame {
                     rowData[6] = AWPtext7.getText();
 
                     MWPictureDisplay.getInstance().model.addRow(rowData);
+                    MWPictureDisplaycopy.getInstance().model.addRow(rowData);
 
                     MainWindow temp = MainWindow.getInstance();
                     MWPictureDisplay PictureDisplay = MWPictureDisplay.getInstance();
                     temp.setContentPane(PictureDisplay);
                     temp.revalidate();
                     temp.repaint(); // 切换到CD界面
+
+                    MCStatistic.getInstance().totalItems += 1;
+                    MCStatistic.getInstance().picture += 1;
+                    MCStatistic.getInstance().add();
 
                     dispose();
                 }

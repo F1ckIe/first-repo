@@ -2,6 +2,7 @@
 //by cjm
 
 import javax.swing.*;
+import java.awt.event.*;
 import java.awt.*;
 
 public class SaveWindow extends JFrame {
@@ -23,5 +24,24 @@ public class SaveWindow extends JFrame {
         SWcomponents.add(Box.createRigidArea(new Dimension(50, 0)));
         SWcomponents.add(SWbutton2);
         setContentPane(SWcomponents);
+
+        SWbutton1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                // System.out.println("aaa");
+                MWBookDisplay.getInstance().saving();
+                MWCDDisplay.getInstance().saving();
+                MWPictureDisplay.getInstance().saving();
+                dispose();
+            }
+        });
+
+        SWbutton2.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                // System.out.println("aaa");
+                dispose();
+            }
+        });
     }
 }

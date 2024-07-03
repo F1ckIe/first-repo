@@ -16,14 +16,19 @@ public class MCStatistic extends JPanel {
     MWCDDisplay cdDisplay = MWCDDisplay.getInstance();
     MWPictureDisplay pictureDisplay = MWPictureDisplay.getInstance();
 
+    int book;
+    int CD;
+    int picture;
+    int totalItems;
+
     private MCStatistic() {
         setLayout(new GridBagLayout());
         Font largerFont = new Font("楷体", Font.PLAIN, 40);
         GridBagConstraints gbc = new GridBagConstraints();
-        int book = 0;
-        int CD = 0;
-        int picture = 0;
-        int totalItems = 0;
+        book = 0;
+        CD = 0;
+        picture = 0;
+        totalItems = 0;
         // 显示总物品数
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -64,12 +69,22 @@ public class MCStatistic extends JPanel {
     }
 
     void pass() {
-        int book = bookDisplay.num;
-        int CD = cdDisplay.num;
-        int picture = pictureDisplay.num;
-        int totalItems = book + CD + picture;
+        book = bookDisplay.num;
+        CD = cdDisplay.num;
+        picture = pictureDisplay.num;
+        totalItems = book + CD + picture;
         // System.out.println(totalItems);
 
+        totalLabel.setText("目前图书馆总物品数有 " + totalItems);
+        categoryLabel1.setText("目前图书的数量有: " + book);
+        categoryLabel2.setText("目前CD的数量有: " + CD);
+        categoryLabel3.setText("目前图画的数量有: " + picture);
+
+        revalidate();
+        repaint();
+    }
+
+    void add() {
         totalLabel.setText("目前图书馆总物品数有 " + totalItems);
         categoryLabel1.setText("目前图书的数量有: " + book);
         categoryLabel2.setText("目前CD的数量有: " + CD);

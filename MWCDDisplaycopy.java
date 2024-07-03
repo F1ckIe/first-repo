@@ -13,42 +13,36 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class MWPictureDisplay extends JPanel {
-
-    private static MWPictureDisplay instance;
-    DefaultTableModel model = new DefaultTableModel() {
-        public boolean isCellEditable(int rowIndex, int columnIndex) {
-            return false; // 总是返回false，表示没有单元格是可编辑的
-        }
-    };
+public class MWCDDisplaycopy extends JPanel {
+    private static MWCDDisplaycopy instance;
+    DefaultTableModel model = new DefaultTableModel();
 
     Object[] rowData;
     int num = 0;
     JTable table;
 
-    private MWPictureDisplay() {
+    private MWCDDisplaycopy() {
         setLayout(new BorderLayout());
-        String[] columnNames = { "编号", "标题", "作者", "评级", "出品国籍", "长", "宽" };
+        String[] columnNames = { "编号", "标题", "作者", "评级", "出品者", "出品年份", "视频时长" };
         model.setColumnIdentifiers(columnNames);
         table = new JTable(model);
         JScrollPane scrollPane = new JScrollPane(table);
         add(scrollPane, BorderLayout.CENTER); // 使用JScrollPane包装JTable以提供滚动功能
     }
 
-    public static MWPictureDisplay getInstance() {
+    public static MWCDDisplaycopy getInstance() {
         if (instance == null) {
-            instance = new MWPictureDisplay();
+            instance = new MWCDDisplaycopy();
         }
         return instance;
     }
 
     void pass() {
-        String BookFile = "Picture.txt";
+        String BookFile = "CD.txt";
         model.setRowCount(0);// 每次读取从第一行开始
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(new FileInputStream(BookFile), "UTF-8"))) {
             String line;
-            num = 0;
             while ((line = reader.readLine()) != null) {
                 String[] values = line.split(" ");
                 rowData = new Object[7];
@@ -72,20 +66,10 @@ public class MWPictureDisplay extends JPanel {
         return model;
     }
 
-    public int dede(String m) {
-        for (int i = model.getRowCount() - 1; i >= 0; i--) {
-            if (m.equals(model.getValueAt(i, 0))) {
-                model.removeRow(i);
-                return 0;
-            }
-        }
-        return 1;
-    }
-
     void saving() {
-        String fileName = "Picture.txt";
+        String fileName = "CD.txt";
         try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream(fileName), "UTF-8"))) {
+                new FileOutputStream(fileName, true), "UTF-8"))) {
             for (int row = 0; row < table.getRowCount(); row++) {
                 for (int col = 0; col < table.getColumnCount(); col++) {
                     writer.write(table.getValueAt(row, col).toString());
@@ -95,9 +79,8 @@ public class MWPictureDisplay extends JPanel {
                 }
                 writer.newLine(); // 写入行尾，进入下一行
             }
-            JOptionPane.showMessageDialog(this, "所有文件已保存在相应文件");
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Error saving file: " + e.getMessage());
+            ;
         }
     }
 }

@@ -123,12 +123,16 @@ public class AddWindowBook extends JFrame {
                     rowData[6] = AWBtext7.getText();
 
                     MWBookDisplay.getInstance().model.addRow(rowData);
+                    MWBookDisplaycopy.getInstance().model.addRow(rowData);
 
                     MainWindow temp = MainWindow.getInstance();
                     MWBookDisplay bookDisplay = MWBookDisplay.getInstance();
                     temp.setContentPane(bookDisplay);
                     temp.revalidate();
                     temp.repaint(); // 切换到图书界面
+                    MCStatistic.getInstance().totalItems += 1;
+                    MCStatistic.getInstance().book += 1;
+                    MCStatistic.getInstance().add();
 
                     dispose();
                 }

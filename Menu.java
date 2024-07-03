@@ -13,7 +13,7 @@ public class Menu {
     public Menu() {
         menubar = new JMenuBar();
         menu1 = new JMenu("添加物品"); // 设置菜单名
-        menu2 = new JMenu("查询物品");
+        menu2 = new JMenu("查询编辑");
         menu3 = new JMenu("显示物品库");
         menu4 = new JMenu("删除物品");
         menu5 = new JMenu("物品存盘");
@@ -100,6 +100,7 @@ public class Menu {
             @Override
             public void mouseReleased(MouseEvent e) {
                 NumberSearch numberSearch = new NumberSearch();
+                // System.out.println("666");
                 Container con = numberSearch.getContentPane();
                 con.setBackground(Color.pink);
             } // 编号查询

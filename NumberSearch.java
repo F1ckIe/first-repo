@@ -4,12 +4,13 @@
 import javax.swing.JFrame;
 
 public class NumberSearch extends JFrame {
+
     public NumberSearch() {
         setTitle("编号查询");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(400, 140);
         setLocationRelativeTo(null);
-        NSComponents components = new NSComponents();
+        NSComponents components = NSComponents.getInstance();
         setContentPane(components);
 
         setVisible(true);

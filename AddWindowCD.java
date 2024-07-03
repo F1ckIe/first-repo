@@ -124,12 +124,17 @@ public class AddWindowCD extends JFrame {
                     rowData[6] = AWCtext7.getText();
 
                     MWCDDisplay.getInstance().model.addRow(rowData);
+                    MWCDDisplaycopy.getInstance().model.addRow(rowData);
 
                     MainWindow temp = MainWindow.getInstance();
                     MWCDDisplay CDDisplay = MWCDDisplay.getInstance();
                     temp.setContentPane(CDDisplay);
                     temp.revalidate();
                     temp.repaint(); // 切换到CD界面
+
+                    MCStatistic.getInstance().totalItems += 1;
+                    MCStatistic.getInstance().CD += 1;
+                    MCStatistic.getInstance().add();
 
                     dispose();
                 }

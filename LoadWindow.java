@@ -32,6 +32,10 @@ public class LoadWindow extends JFrame {
                 MWCDDisplay.getInstance().pass();
                 MWPictureDisplay.getInstance().pass();
                 MCStatistic.getInstance().pass();
+
+                MWBookDisplaycopy.getInstance().pass();
+                MWCDDisplaycopy.getInstance().pass();
+                MWPictureDisplaycopy.getInstance().pass();
                 // System.out.println("666");
                 dispose();
             }
