@@ -126,21 +126,22 @@ public class BookNumberResult extends JPanel {
 
                             cue.setVisible(true);
                         } else {
-                            BookDisplay.getModel().setValueAt(bianhaotext.getText(), temp.result2, 0);
-                            BookDisplay.getModel().setValueAt(biaotitext.getText(), temp.result2, 1);
-                            BookDisplay.getModel().setValueAt(zuozhetext.getText(), temp.result2, 2);
-                            BookDisplay.getModel().setValueAt(comboBox.getSelectedItem(), temp.result2, 3);
-                            BookDisplay.getModel().setValueAt(chubanshetext.getText(), temp.result2, 4);
-                            BookDisplay.getModel().setValueAt(ISBNtext.getText(), temp.result2, 5);
-                            BookDisplay.getModel().setValueAt(yeshutext.getText(), temp.result2, 6);
+                            // System.out.println(temp.result1);
+                            BookDisplay.getModel().setValueAt(bianhaotext.getText(), temp.result1, 0);
+                            BookDisplay.getModel().setValueAt(biaotitext.getText(), temp.result1, 1);
+                            BookDisplay.getModel().setValueAt(zuozhetext.getText(), temp.result1, 2);
+                            BookDisplay.getModel().setValueAt(comboBox.getSelectedItem(), temp.result1, 3);
+                            BookDisplay.getModel().setValueAt(chubanshetext.getText(), temp.result1, 4);
+                            BookDisplay.getModel().setValueAt(ISBNtext.getText(), temp.result1, 5);
+                            BookDisplay.getModel().setValueAt(yeshutext.getText(), temp.result1, 6);
 
-                            BookDisplaycopy.getModel().setValueAt(bianhaotext.getText(), temp.result2, 0);
-                            BookDisplaycopy.getModel().setValueAt(biaotitext.getText(), temp.result2, 1);
-                            BookDisplaycopy.getModel().setValueAt(zuozhetext.getText(), temp.result2, 2);
-                            BookDisplaycopy.getModel().setValueAt(comboBox.getSelectedItem(), temp.result2, 3);
-                            BookDisplaycopy.getModel().setValueAt(chubanshetext.getText(), temp.result2, 4);
-                            BookDisplaycopy.getModel().setValueAt(ISBNtext.getText(), temp.result2, 5);
-                            BookDisplaycopy.getModel().setValueAt(yeshutext.getText(), temp.result2, 6);
+                            BookDisplaycopy.getModel().setValueAt(bianhaotext.getText(), temp.result1, 0);
+                            BookDisplaycopy.getModel().setValueAt(biaotitext.getText(), temp.result1, 1);
+                            BookDisplaycopy.getModel().setValueAt(zuozhetext.getText(), temp.result1, 2);
+                            BookDisplaycopy.getModel().setValueAt(comboBox.getSelectedItem(), temp.result1, 3);
+                            BookDisplaycopy.getModel().setValueAt(chubanshetext.getText(), temp.result1, 4);
+                            BookDisplaycopy.getModel().setValueAt(ISBNtext.getText(), temp.result1, 5);
+                            BookDisplaycopy.getModel().setValueAt(yeshutext.getText(), temp.result1, 6);
                         }
                     }
                 });

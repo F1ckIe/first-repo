@@ -126,21 +126,21 @@ public class PictureNumberResult extends JPanel {
 
                             cue.setVisible(true);
                         } else {
-                            PictureDisplay.getModel().setValueAt(bianhaotext.getText(), temp.result2, 0);
-                            PictureDisplay.getModel().setValueAt(biaotitext.getText(), temp.result2, 1);
-                            PictureDisplay.getModel().setValueAt(zuozhetext.getText(), temp.result2, 2);
-                            PictureDisplay.getModel().setValueAt(comboBox.getSelectedItem(), temp.result2, 3);
-                            PictureDisplay.getModel().setValueAt(chubanshetext.getText(), temp.result2, 4);
-                            PictureDisplay.getModel().setValueAt(ISBNtext.getText(), temp.result2, 5);
-                            PictureDisplay.getModel().setValueAt(yeshutext.getText(), temp.result2, 6);
+                            PictureDisplay.getModel().setValueAt(bianhaotext.getText(), temp.result3, 0);
+                            PictureDisplay.getModel().setValueAt(biaotitext.getText(), temp.result3, 1);
+                            PictureDisplay.getModel().setValueAt(zuozhetext.getText(), temp.result3, 2);
+                            PictureDisplay.getModel().setValueAt(comboBox.getSelectedItem(), temp.result3, 3);
+                            PictureDisplay.getModel().setValueAt(chubanshetext.getText(), temp.result3, 4);
+                            PictureDisplay.getModel().setValueAt(ISBNtext.getText(), temp.result3, 5);
+                            PictureDisplay.getModel().setValueAt(yeshutext.getText(), temp.result3, 6);
 
-                            PictureDisplaycopy.getModel().setValueAt(bianhaotext.getText(), temp.result2, 0);
-                            PictureDisplaycopy.getModel().setValueAt(biaotitext.getText(), temp.result2, 1);
-                            PictureDisplaycopy.getModel().setValueAt(zuozhetext.getText(), temp.result2, 2);
-                            PictureDisplaycopy.getModel().setValueAt(comboBox.getSelectedItem(), temp.result2, 3);
-                            PictureDisplaycopy.getModel().setValueAt(chubanshetext.getText(), temp.result2, 4);
-                            PictureDisplaycopy.getModel().setValueAt(ISBNtext.getText(), temp.result2, 5);
-                            PictureDisplaycopy.getModel().setValueAt(yeshutext.getText(), temp.result2, 6);
+                            PictureDisplaycopy.getModel().setValueAt(bianhaotext.getText(), temp.result3, 0);
+                            PictureDisplaycopy.getModel().setValueAt(biaotitext.getText(), temp.result3, 1);
+                            PictureDisplaycopy.getModel().setValueAt(zuozhetext.getText(), temp.result3, 2);
+                            PictureDisplaycopy.getModel().setValueAt(comboBox.getSelectedItem(), temp.result3, 3);
+                            PictureDisplaycopy.getModel().setValueAt(chubanshetext.getText(), temp.result3, 4);
+                            PictureDisplaycopy.getModel().setValueAt(ISBNtext.getText(), temp.result3, 5);
+                            PictureDisplaycopy.getModel().setValueAt(yeshutext.getText(), temp.result3, 6);
                             temp.result.dispose();
                         }
                     }
